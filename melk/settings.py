@@ -101,12 +101,8 @@ WSGI_APPLICATION = 'melk.wsgi.application'
 
 DATABASES = {
     'default': {
-        "ENGINE": "django.db.backends.mysql",
-        'NAME': 'pouyaAz77$default',
-        'Host':'pouyaAz77.mysql.pythonanywhere-services.com',
-        'USER':'pouyaAz77',
-        'PASSWORD':'p13777731P',
-        'PORT':'3306'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
