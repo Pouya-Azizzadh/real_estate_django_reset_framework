@@ -44,11 +44,21 @@ INSTALLED_APPS = [
      'user',
      'knox',
      'estate',
+    'drf_spectacular',
+ 
   ]
 AUTH_USER_MODEL = 'user.CustomUser'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication', ),
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+
+}
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'real Estate',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
 }
 REST_KNOX ={
     'USER_SERIALIZER':'accounts.serializers.UserSerializer',

@@ -11,8 +11,9 @@ from rest_framework.response import Response
 from django.contrib.auth import login
 from rest_framework.views import APIView
 from rest_framework import viewsets,generics
- 
-  
+from drf_spectacular.utils import extend_schema, OpenApiParameter, OpenApiExample
+
+@extend_schema(responses=LogInUserSerializer) 
 class LoginApiView(generics.GenericAPIView):
     serializer_class=LogInUserSerializer
     def post(self,request, format=None):
